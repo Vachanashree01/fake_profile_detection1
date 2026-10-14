@@ -1,0 +1,49 @@
+body {
+    background-color: #0b0f19;
+    color: #e2e8f0;
+    font-family: system-ui, sans-serif;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+.app-container { width: 100%; max-width: 700px; }
+header { text-align: center; margin-bottom: 35px; }
+header h1 { color: #ffffff; font-size: 2.3rem; margin: 0; }
+header p { color: #64748b; font-size: 0.95rem; margin-top: 5px; }
+.form-matrix {
+    background-color: #111827;
+    border: 1px solid #1f2937;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+.fields-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.field-item { display: flex; flex-direction: column; }
+.field-item label { font-size: 0.85rem; color: #94a3b8; margin-bottom: 6px; }
+.field-item input, .field-item select {
+    background-color: #0b0f19;
+    border: 1px solid #374151;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+}
+.field-item input:focus, .field-item select:focus { border-color: #3b82f6; }
+.cta-btn {
+    width: 100%;
+    background-color: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    font-weight: 600;
+    margin-top: 25px;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+.cta-btn:hover { background-color: #1d4ed8; }
+.banner { margin-top: 25px; padding: 15px; border-radius: 6px; text-align: center; font-size: 0.95rem; }
+.success-alert { background: rgba(16, 185, 129, 0.1); border: 1px solid #10b981; color: #10b981; }
+.danger-alert { background: rgba(239, 68, 68, 0.1); border: 1px solid #ef4444; color: #ef4444; }
+@media (max-width: 550px) { .fields-grid { grid-template-columns: 1fr; } }

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Account Scanner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>🛡️ ProfileScanner AI</h1>
+            <p>Advanced Real-Time Metadata Security Classification Dashboard</p>
+        </header>
+        <main>
+            <form action="/predict" method="POST" class="form-matrix">
+                <div class="fields-grid">
+                    <div class="field-item">
+                        <label>Total Followers</label>
+                        <input type="number" name="followers" required placeholder="e.g. 1200">
+                    </div>
+                    <div class="field-item">
+                        <label>Total Following</label>
+                        <input type="number" name="following" required placeholder="e.g. 350">
+                    </div>
+                    <div class="field-item">
+                        <label>Account Post Count</label>
+                        <input type="number" name="posts" required placeholder="e.g. 45">
+                    </div>
+                    <div class="field-item">
+                        <label>Username Numeric Ratio (0.00 - 1.00)</label>
+                        <input type="number" name="digits" step="0.01" min="0" max="1" required placeholder="e.g. 0.15">
+                    </div>
+                    <div class="field-item">
+                        <label>Has Avatar Uploaded?</label>
+                        <select name="pic" required>
+                            <option value="1">Confirmed Uploaded</option>
+                            <option value="0">Default Placeholder Silhouette</option>
+                        </select>
+                    </div>
+                    <div class="field-item">
+                        <label>Bio String Text Length (Characters)</label>
+                        <input type="number" name="bio" required placeholder="e.g. 95">
+                    </div>
+                </div>
+                <button type="submit" class="cta-btn">Run Detection Evaluation</button>
+            </form>
+            {% if evaluation_status %}
+                <div class="banner {{ alert_style }}">
+                    <h3>{{ evaluation_status }}</h3>
+                </div>
+            {% endif %}
+        </main>
+    </div>
+</body>
+</html>
